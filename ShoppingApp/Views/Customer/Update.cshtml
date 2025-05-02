@@ -1,0 +1,51 @@
+﻿@model Customer
+@using CRMLib
+
+@{
+    ViewData["Title"] = "Update Customer";
+}
+
+<h2>Update Customer</h2>
+
+<form asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <p>
+        <label>Name:</label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </p>
+
+    <p>
+        <label>Email:</label><br />
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </p>
+
+    <p>
+        <label>Contact:</label><br />
+        <input asp-for="ContactNumber" />
+        <span asp-validation-for="ContactNumber" class="text-danger"></span>
+    </p>
+
+    <p>
+        <label>Location:</label><br />
+        <input asp-for="Location" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </p>
+
+    <p>
+        <label>Age:</label><br />
+        <input asp-for="Age" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </p>
+
+    <p>
+        <button type="submit">Update</button>
+        <a asp-action="Index">Cancel</a>
+    </p>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

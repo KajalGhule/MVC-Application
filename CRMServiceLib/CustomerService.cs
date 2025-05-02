@@ -35,26 +35,34 @@ namespace CRMService.Service
             }
         }
 
-        public void DeleteCustomer(int id)
+        public bool DeleteCustomer(int id)
         {
             List<Customer> customers = GetCustomers();
             Customer c = customers.FirstOrDefault(customer => customer.Id == id);
-            customers.Remove(c);
-            new CustomerIOManager().WriteCustomers(customers);
+            if (c != null)
+            {
+                customers.Remove(c);
+                new CustomerIOManager().WriteCustomers(customers);
+                return true;
+            }
+            return false;
         }
 
-        public void UpdateCustomer(Customer customer)
+        public bool UpdateCustomer(Customer customer)
         {
             List<Customer> customers = GetCustomers();
             Customer cust = customers.FirstOrDefault(c => c.Id == customer.Id);
             if (cust != null) { 
+                cust.Id = customer.Id;         
                 cust.Name = customer.Name;
                 cust.Email = customer.Email;
                 cust.ContactNumber = customer.ContactNumber;
                 cust.Age = customer.Age;
                 cust.Location = customer.Location;
                 new CustomerIOManager().WriteCustomers(customers);
+                return true;
             }
+            return false;
         }
     }
 }

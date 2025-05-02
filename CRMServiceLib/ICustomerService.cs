@@ -9,7 +9,7 @@ namespace CRMService.Service
         bool AddCustomer(Customer customer);
 
         Customer GetCustomerById(int id);
-        void UpdateCustomer(Customer customer);
-        void DeleteCustomer(int id);
+        bool UpdateCustomer(Customer customer);
+        bool DeleteCustomer(int id);
     }
 }

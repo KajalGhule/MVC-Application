@@ -1,0 +1,43 @@
+﻿@using CRMLib;
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Customer Details</h2>
+@{
+
+    Customer theCustomer = ViewBag.Customer;
+    // Customer theCustomer = ViewData["customer"] as Customer;
+}
+<table style="font-family:Arial">
+    <tr>
+        <td><b>Name :</b></td>
+        <td>@theCustomer.Name</td>
+    </tr>
+    <tr>
+        <td><b>Email :</b></td>
+        <td>@theCustomer.Email</td>
+    </tr>
+    <tr>
+        <td><b>ContactNumber :</b></td>
+        <td>@theCustomer.ContactNumber</td>
+    </tr>
+    <tr>
+        <td><b>Location :</b></td>
+        <td>@theCustomer.Location</td>
+    </tr>
+    <tr>
+        <td><b>Age :</b></td>
+        <td>@theCustomer.Age</td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Update", "Update", "Customer", new { id = theCustomer.Id }, "")
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", "Customer", new { id = theCustomer.Id }, "")
+        </td>
+    </tr>
+</table>
+

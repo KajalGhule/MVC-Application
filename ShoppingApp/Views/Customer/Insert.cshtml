@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Insert Customer";
+}
+<style>
+table, td, th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+
+ .button {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+
+<div class="data">
+    <h1>Insert Customer</h1>
+
+    <form action="/customer/insert" method="post">
+        <table>
+            <tr>
+                <td>Customer id:</td>
+                <td><input type="text" name="Id" placeholder="Customer id" /></td>
+            </tr>
+
+
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="Name" placeholder="Customer Name" /></td>
+            </tr>
+
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="Email" placeholder="Customer Email" /></td>
+            </tr>
+
+            <tr>
+                <td>Contact number:</td>
+                <td><input type="text" name="ContactNumber" placeholder="Contact number:" /></td>
+            </tr>
+
+            <tr>
+                <td>Location:</td>
+                <td><input type="text" name="Location" placeholder="Location" /></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="text" name="Age" placeholder="Age" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                @* <td><input type="submit" class="submitButton" name="btn" value=" Insert " /></td> *@
+                <td><button class="button">Button</button></td>
+            </tr>
+
+        </table>
+    </form>
+
+</div>

@@ -15,7 +15,7 @@ namespace CRMRepository
         public List<Customer> ReadCustomers()
         {
             List<Customer> customers = new List<Customer>();
-            string filePath = @"D:/TAP/test/customers.json";
+            string filePath = @"D:/TAP/WeekEndBatchProject/MVC-Application/ShoppingApp/MVC-Application/customers.json";
             if (File.Exists(filePath))
             {
                 string jsonString = File.ReadAllText(filePath);
@@ -29,7 +29,7 @@ namespace CRMRepository
             //Serialize customers
             //write customers to file
             string jsonString = JsonSerializer.Serialize(customers);
-            string filePath = @"D:/TAP/test/customers.json";
+            string filePath = @"D:/TAP/WeekEndBatchProject/MVC-Application/ShoppingApp/MVC-Application/customers.json";
             File.WriteAllText(filePath, jsonString);
         }
     }

@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "CRMWebAPI\\CRMService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ShoppingApp\\ShoppingAppMVC.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
